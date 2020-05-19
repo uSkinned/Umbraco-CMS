@@ -89,6 +89,9 @@ src/Umbraco.Web.UI/[Ww]eb.config
 node_modules
 lib-bower
 
+src/Umbraco.Web.UI.NetCore/wwwroot
+src/Umbraco.Web.UI.Client/package-lock.json
+
 src/Umbraco.Web.UI/[Uu]mbraco/[Ll]ib/*
 src/Umbraco.Web.UI/[Uu]mbraco/[Jj]s/umbraco.*
 src/Umbraco.Web.UI/[Uu]mbraco/[Jj]s/*.loader.js
