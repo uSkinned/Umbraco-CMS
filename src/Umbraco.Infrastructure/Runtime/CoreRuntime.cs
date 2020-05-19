@@ -164,8 +164,6 @@ namespace Umbraco.Core.Runtime
 
             try
             {
-
-
                 // run handlers
                 RuntimeOptions.DoRuntimeBoot(ProfilingLogger);
 
