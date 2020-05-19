@@ -11,7 +11,7 @@
             "preLaunchTask": "build",
             "program": "${workspaceFolder}/src/Umbraco.Web.UI.NetCore/bin/Debug/netcoreapp3.1/Umbraco.Web.UI.NetCore",
             "args": [],
-            "cwd": "${workspaceFolder}",
+            "cwd": "${workspaceFolder}/src/Umbraco.Web.UI.NetCore",
             "stopAtEntry": false,
             "console": "internalConsole"
         }
