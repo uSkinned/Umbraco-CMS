@@ -16,7 +16,6 @@ using Umbraco.Net;
 using Umbraco.Core.Persistence;
 using Umbraco.Core.Serialization;
 using Umbraco.Core.Strings;
-using Umbraco.Core.Sync;
 using Umbraco.Web;
 using Umbraco.Web.Routing;
 
@@ -34,7 +33,7 @@ namespace Umbraco.Tests.Common
 
         protected TestHelperBase(Assembly entryAssembly)
         {
-            SettingsForTests = new SettingsForTests();            
+            SettingsForTests = new SettingsForTests();
             MainDom = new SimpleMainDom();
             _typeFinder = new TypeFinder(Mock.Of<ILogger>(), new DefaultUmbracoAssemblyProvider(entryAssembly), new VaryingRuntimeHash());
         }
@@ -51,10 +50,8 @@ namespace Umbraco.Tests.Common
         public IRuntimeState GetRuntimeState()
         {
             return new RuntimeState(
-                Mock.Of<ILogger>(),
                 Mock.Of<IGlobalSettings>(),
-                GetUmbracoVersion(),
-                GetBackOfficeInfo());
+                GetUmbracoVersion());
         }
 
         public abstract IBackOfficeInfo GetBackOfficeInfo();

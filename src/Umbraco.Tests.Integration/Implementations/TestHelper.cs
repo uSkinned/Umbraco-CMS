@@ -37,7 +37,7 @@ namespace Umbraco.Tests.Integration.Implementations
             var httpContext = new DefaultHttpContext();
             httpContext.Connection.RemoteIpAddress = IPAddress.Parse("127.0.0.1");
             _httpContextAccessor = Mock.Of<IHttpContextAccessor>(x => x.HttpContext == httpContext);
-            _ipResolver = new AspNetIpResolver(_httpContextAccessor);
+            _ipResolver = new AspNetCoreIpResolver(_httpContextAccessor);
 
             var hostEnvironment = new Mock<IWebHostEnvironment>();
             hostEnvironment.Setup(x => x.ApplicationName).Returns("UmbracoIntegrationTests");
@@ -93,7 +93,7 @@ namespace Umbraco.Tests.Integration.Implementations
         public IWebHostEnvironment GetWebHostEnvironment() => _hostEnvironment;
 
         public override IDbProviderFactoryCreator DbProviderFactoryCreator =>
-            new SqlServerDbProviderFactoryCreator(Constants.DbProviderNames.SqlServer, DbProviderFactories.GetFactory);
+            new SqlServerDbProviderFactoryCreator(DbProviderFactories.GetFactory);
 
         public override IBulkSqlInsertProvider BulkSqlInsertProvider => new SqlServerBulkSqlInsertProvider();
 

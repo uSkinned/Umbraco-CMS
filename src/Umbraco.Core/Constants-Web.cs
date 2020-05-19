@@ -49,6 +49,13 @@
             /// The default authentication type used for remembering that 2FA is not needed on next login
             /// </summary>
             public const string TwoFactorRememberBrowserCookie = "TwoFactorRememberBrowser";
+
+            public static class Mvc
+            {
+                public const string InstallArea = "UmbracoInstall";
+                public const string BackOfficeArea = "UmbracoBackOffice"; // Used for area routes of non-api controllers
+                public const string BackOfficeApiArea = "UmbracoApi"; // Same name as v8 so all routing remains the same
+            }
         }
     }
 }

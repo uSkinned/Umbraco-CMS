@@ -15,9 +15,8 @@ using Umbraco.Tests.Common;
 using Umbraco.Tests.Integration.Extensions;
 using Umbraco.Tests.Integration.Implementations;
 using Umbraco.Tests.Integration.Testing;
-using Umbraco.Web.BackOffice.AspNetCore;
 using Umbraco.Web.Common.AspNetCore;
-using Umbraco.Web.Common.Extensions;
+using Umbraco.Extensions;
 
 namespace Umbraco.Tests.Integration
 {
@@ -47,7 +46,7 @@ namespace Umbraco.Tests.Integration
         {
             // LightInject / Umbraco
             var container = UmbracoServiceProviderFactory.CreateServiceContainer();
-            var serviceProviderFactory = new UmbracoServiceProviderFactory(container);
+            var serviceProviderFactory = new UmbracoServiceProviderFactory(container, false);
             var umbracoContainer = serviceProviderFactory.GetContainer();
 
             // Special case since we are not using the Generic Host, we need to manually add an AspNetCore service to the container
@@ -97,6 +96,7 @@ namespace Umbraco.Tests.Integration
                 .ConfigureServices((hostContext, services) =>
                 {
                     var webHostEnvironment = testHelper.GetWebHostEnvironment();
+                    services.AddSingleton(testHelper.DbProviderFactoryCreator);
                     services.AddRequiredNetCoreServices(testHelper, webHostEnvironment);
 
                     // Add it!
@@ -136,6 +136,7 @@ namespace Umbraco.Tests.Integration
                 .ConfigureServices((hostContext, services) =>
                 {
                     var webHostEnvironment = testHelper.GetWebHostEnvironment();
+                    services.AddSingleton(testHelper.DbProviderFactoryCreator);
                     services.AddRequiredNetCoreServices(testHelper, webHostEnvironment);
 
                     // Add it!
