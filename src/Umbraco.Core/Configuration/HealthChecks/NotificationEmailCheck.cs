@@ -16,7 +16,7 @@ namespace Umbraco.Web.HealthCheck.Checks.Config
             : base(textService, ioHelper, logger)
         { }
 
-        public override string FilePath => "~/Config/umbracoSettings.config";
+        public override string FilePath => "~/config/umbracoSettings.config";
 
         public override string XPath => "/settings/content/notifications/email";
 
