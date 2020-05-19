@@ -89,7 +89,7 @@ namespace Umbraco.Core.IO
 
         private static string NormPath(string path)
         {
-            return path.ToLowerInvariant().Replace("\\", "/");
+            return path.Replace("\\", "/");
         }
 
         // values can be "" (root), "foo", "foo/bar"...
