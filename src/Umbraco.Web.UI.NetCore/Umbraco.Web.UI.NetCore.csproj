@@ -5,6 +5,7 @@
         <RootNamespace>Umbraco.Web.UI.NetCore</RootNamespace>
     </PropertyGroup>
     <ItemGroup>
+      <ProjectReference Include="..\Umbraco.PublishedCache.NuCache\Umbraco.PublishedCache.NuCache.csproj" />
       <ProjectReference Include="..\Umbraco.Web.BackOffice\Umbraco.Web.BackOffice.csproj" />
       <ProjectReference Include="..\Umbraco.Web.Common\Umbraco.Web.Common.csproj" />
       <ProjectReference Include="..\Umbraco.Web.Website\Umbraco.Web.Website.csproj" />
