@@ -41,9 +41,9 @@ namespace Umbraco.Web
 
                 var hostingEnvironment = new AspNetHostingEnvironment(hostingSettings);
                 var loggingConfiguration = new LoggingConfiguration(
-                    Path.Combine(hostingEnvironment.ApplicationPhysicalPath, "App_Data", "Logs"),
-                    Path.Combine(hostingEnvironment.ApplicationPhysicalPath, "config", "serilog.config"),
-                    Path.Combine(hostingEnvironment.ApplicationPhysicalPath, "config", "serilog.user.config"));
+                    Path.Combine(hostingEnvironment.ApplicationPhysicalPath, "App_Data\\Logs"),
+                    Path.Combine(hostingEnvironment.ApplicationPhysicalPath, "config\\serilog.config"),
+                    Path.Combine(hostingEnvironment.ApplicationPhysicalPath, "config\\serilog.user.config"));
                 var ioHelper = new IOHelper(hostingEnvironment, globalSettings);
                 var logger = SerilogLogger.CreateWithDefaultConfiguration(hostingEnvironment, loggingConfiguration);
 

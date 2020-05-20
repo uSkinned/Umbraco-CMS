@@ -10,7 +10,7 @@ namespace Umbraco.Core.Logging.Viewer
     public class LogViewerConfig : ILogViewerConfig
     {
         private readonly IHostingEnvironment _hostingEnvironment;
-        private const string _pathToSearches = "~/config/logviewer.searches.config.js";
+        private const string _pathToSearches = "~/Config/logviewer.searches.config.js";
         private readonly FileInfo _searchesConfig;
 
         public LogViewerConfig(IHostingEnvironment hostingEnvironment)

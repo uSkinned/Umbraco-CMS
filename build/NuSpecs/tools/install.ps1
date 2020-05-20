@@ -13,7 +13,7 @@ if ($project) {
 	Write-Host "projectPath:" "${projectPath}"
 	$webConfigSource = Join-Path $projectPath "Web.config"
 	Write-Host "webConfigSource:" "${webConfigSource}"
-	$configFolder = Join-Path $projectPath "config"
+	$configFolder = Join-Path $projectPath "Config"
 	Write-Host "configFolder:" "${configFolder}"
 
 	# Copy umbraco and umbraco_files from package to project folder

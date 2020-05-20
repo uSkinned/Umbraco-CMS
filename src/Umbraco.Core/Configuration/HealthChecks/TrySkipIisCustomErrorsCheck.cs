@@ -22,7 +22,7 @@ namespace Umbraco.Web.HealthCheck.Checks.Config
             _iisVersion = hostingEnvironment.IISVersion;
         }
 
-        public override string FilePath => "~/config/umbracoSettings.config";
+        public override string FilePath => "~/Config/umbracoSettings.config";
 
         public override string XPath => "/settings/web.routing/@trySkipIisCustomErrors";
 
